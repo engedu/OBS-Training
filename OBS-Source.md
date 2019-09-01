@@ -42,7 +42,7 @@ Use Buffering (Checkbox) | เปิดใช้งานหรือปิด�
 
 รายการ | รายละเอียด
 --|--
-Local File (Checkbox): |บอกแหล่งที่มาหากคุณกำลังโหลดหน้าเว็บจากเครื่องคอมพิวเตอร์ที่กำลังใช้งานอยู่หรือจากเครื่องอืนๆ (จากอินเตอร์เน็ต)
+Local File (Checkbox) |บอกแหล่งที่มาหากคุณกำลังโหลดหน้าเว็บจากเครื่องคอมพิวเตอร์ที่กำลังใช้งานอยู่หรือจากเครื่องอืนๆ (จากอินเตอร์เน็ต)
 Width| ตั้งค่าความกว้างวิวพอร์ตของหน้าเบราว์เซอร์
 Height| ตั้งค่าความสูงวิวพอร์ตของหน้าเบราว์เซอร์
 FPS| ตั้งค่า FPS สำหรับเบราว์เซอร์
@@ -91,16 +91,19 @@ Game Capture เป็นวิธีที่มีประสิทธิภ�
  ### Mode 
  <li>Capture any fullscreen application 
 
- The first option, capture any fullscreen application, will automatically detect any game running fullscreen on your primary monitor, and add the video output to the Game Capture source in OBS. If you play your games fullscreen, this is the option you should choose. Note that if you only have a single monitor, alt+tabbing out of the game to check OBS will cause the game to stop rendering, so you won't see it show up in the OBS preview.
+ ตัวเลือกนี้ จะจับภาพเต็มหน้าจอและจะค้นหาเกมที่กำลังรันอยู่บนหน้าจอหลักโดยอัตโนมัติ และเพิ่มแอพพลิเคชั่นนั้นไปยัง Game Capture source ใน OBS ดังนั้น ควรเลือกตัวเลือกนี้เมื่อเล่นเกมแบบเต็มหน้าจอ 
+
+ถ้าเครื่องคอมพิวเตอร์มีเพียงหน้าจอเดียว เราจะไม่สามารถเห็นการทำงานของ OBS ในขณะที่เล่นเกม ถ้าทำการกด Alt+Tab เพื่อสลับจากหน้าจอเกมส์มายัง OBS จะพบว่าเกมส์จะหยุด render โดยอัตโนมัติ
  
  
  <li>Capture specific window
 
- The second option, capture specific window, allows you to simply select the active game you want to capture. Window Match Priority lets you select which parameters will be used to separate the available windows. For example, if you have two clients of the same game running with the same executable name, but different window titles, changing the Window Match Priority to Window Title can be very helpful in selecting the proper game to be captured. Experiment if you have issues selecting the right game and see which works best for you.
+ตัวเลือกที่สองนี้มีไว้สำหรับการจับภาพเกมส์บนวินโดวส์ที่กำหนด ช่วยให้สามารถเลือกหน้าต่างเกมส์ที่จะจับภาพได้อย่างสะดวก อย่างไรก็ตาม ถ้ารันเกมส์พร้อมๆ กันสองหน้าต่าง จะต้องเลือก Window Match Priority ให้ตรงกับวินโดวส์ที่ต้องการ
+
  
  <li>Capture foreground window with hotkey
 
- The final option, capture foreground window with hotkey, lets you set a specific key to tell the Game Capture source which game you want to show up. This is very useful if you change games often during a stream, and you don't want to have to go back into the Game Capture properties every time to select your new game. The hotkey can be set under Settings -> Hotkeys once the Game Capture source is added to your scene.
+ตัวเลือกนี้  The final option, capture foreground window with hotkey, lets you set a specific key to tell the Game Capture source which game you want to show up. This is very useful if you change games often during a stream, and you don't want to have to go back into the Game Capture properties every time to select your new game. The hotkey can be set under Settings -> Hotkeys once the Game Capture source is added to your scene.
  
 
 There are several other options, and we'll give a short description of them. In general, the default options are sufficient for most applications and you should not change them unless you know why you need to, and understand what they mean. As always, if you have any questions, please stop by the forums or chat.
@@ -124,12 +127,14 @@ Image Source supports the following image formats: .bmp, .tga, .png, .jpeg, .jpg
 ##  Image Slide Show
 The Image Slide Show Source allows you to add multiple images that will rotate through as a slide show. To use this source, click the + sign to add either individual files or directories to be loaded. Once you have all the images you want, you can configure how you want them to display.
 
-Transition: This drop down box allows you to select the animation type that will play during a transition between files. The default is a simple fade, but it can be changed to a cut, slide, or swipe
-Time Between Slides (milliseconds): As the name implies, the time each image will be displayed before initiating a transition to the next.
-Transition Speed (milliseconds): This is how fast the transition animation will take to go from starting to completely changed to the next image.
+รายการ | รายละเอียด
+--|--
+Transition | This drop down box allows you to select the animation type that will play during a transition between files. The default is a simple fade, but it can be changed to a cut, slide, or swipe
+Time Between Slides (milliseconds) | As the name implies, the time each image will be displayed before initiating a transition to the next.
+Transition Speed (milliseconds) | This is how fast the transition animation will take to go from starting to completely changed to the next image.
 NOTE: This value does not increase the time between slides. For example, if you have the Time Between Slides set to 10000ms, and the Transition Speed set to 2000ms, the transition will BEGIN at 8000ms from the end of the last transition, with the next slide being fully visible at 10000ms. If this value is HIGHER than the Time Between Slides, it will automatically reduce the time to match. It also cannot be lower than 50ms.
-Randomize Playback (checkbox): This option will let you choose if you want to randomize the images being played. If this is enabled, the next image will be randomized at each transition. If disabled, they will be shown in the order of the file list.
-Image Slide Show Source supports the following image formats: .bmp, .tga, .png, .jpeg, .jpg, and .gif.
+Randomize Playback (checkbox) | This option will let you choose if you want to randomize the images being played. If this is enabled, the next image will be randomized at each transition. If disabled, they will be shown in the order of the file list.
+Image Slide Show Source supports the following image formats | .bmp, .tga, .png, .jpeg, .jpg, and .gif.
 
 
 ##  Intel® RealSense™ 3D Camera GreenScreen
@@ -139,17 +144,21 @@ This source type will allow you to use the digital green screen features of an I
 ##  Media Source
 Media source is a great option to add all sorts of different media types to your stream. The currently supported file types are:
 
-Video: .mp4, .ts, .mov, .flv, .mkv, .avi, .gif, .webm
-Audio: .mp3, .aac, .ogg, .wav
+รายการ | รายละเอียด
+--|--
+Video | .mp4, .ts, .mov, .flv, .mkv, .avi, .gif, .webm
+Audio | .mp3, .aac, .ogg, .wav
 Simple click the Browse button to select your file, or uncheck the "Local file" box to allow a URL or other remote location to be added. For remote files, the URL/path goes in Input, and generally Input Format can be left blank.
 
 Once the file has been selected, there are only a few options that would need to be looked at.
 
-Loop: Sets if the file will loop back to the beginning once playback has completed. Useful for .gifs
-Restart playback when source becomes active: This will allow you to set the file to restart once the source is active. Active means in the current visible scene
-Use hardware decoding when available: Fairly self explanatory!
-Hide source when playback ends: If enabled, the source will automatically hide itself when the file has completed playback. Useful for video files so they do not show the last frame indefinitely.
-Advanced: These options should only be access by users who understand what they are, and why they need them, so they will not be covered in this guide.
+รายการ | รายละเอียด
+--|--
+Loop | Sets if the file will loop back to the beginning once playback has completed. Useful for .gifs
+Restart playback when source becomes active | This will allow you to set the file to restart once the source is active. Active means in the current visible scene
+Use hardware decoding when available | Fairly self explanatory!
+Hide source when playback ends | If enabled, the source will automatically hide itself when the file has completed playback. Useful for video files so they do not show the last frame indefinitely.
+Advanced | These options should only be access by users who understand what they are, and why they need them, so they will not be covered in this guide.
 
 ##  Scene
 This Source is often overlooked, and while one of the simplest in function, it can allow for some of the most powerful functionality in OBS Studio. Since all Scenes are considered Sources, you can add an entire Scene as a Source anywhere you want.
@@ -187,19 +196,21 @@ To add your device, simply add the Source, open the properties and select your d
 
 You then have several options to configure it:
 
-Deactivate/Active (Button): Clicking this will either turn your device off (when it reads Deactivate) or on (when it reads Activate).
-Configure Video (Button): This button will open any driver configuration utilities. For example, with a Logitech webcam it will open the Logitech camera configuration software for enabling custom options like facial tracking. With a capture card, it might open the options to configure the input resolution and FPS.
-Configure Crossbar (Button): Opens the device's Crossbar Configuration, if available. Consult your device's manual for more information.
-Resolution/FPS Type: Most of the time this can be left on Device Default. If you are having issues with your device showing up, change it to custom and the following options become available to set manually:
-Resolution: This sets the base resolution for the video device. Make sure it's a mode that your device supports!
-FPS: Sets the FPS of the device.
-Video Format: If your device supports multiple video output formats (Such as MJPEG or XRGB), you can select the preferred format here.
-YUV Color Space: Sets the color space the device will output in.
-YUV Color range: Sets the color range the device will output in.
-Buffering: This has three different modes, Enable, Disable, and Auto-Detect. Enable will turn buffering on, which can help if you are getting stuttering during playback. Setting to Disable will turn buffering off, which can help if you are experiencing a delay on the device. Auto-Detect is recommended, as it will attempt to ask the device which method is preferred.
-Flip Vertically (Checkbox): Flips the video image vertically. Some devices will (rarely) send the video input upside down.
-Audio Output Mode: You can set to Capture Only (meaning you will not hear, without Audio Monitoring), or Output desktop audio (DirectSound/WaveOut). Enabling desktop output will send the device's audio out through your system default device.
-Use custom audio device (Checkbox): When enabled, the Audio Device selection becomes available, and allows you to use a separate audio device that will be linked to your video device. This can be useful if you want to use an external microphone on a webcam, for instance, and want to tie the audio directly to the Source itself.
+รายการ | รายละเอียด
+--|--
+Deactivate/Active (Button) |  Clicking this will either turn your device off (when it reads Deactivate) or on (when it reads Activate).
+Configure Video (Button) |  This button will open any driver configuration utilities. For example, with a Logitech webcam it will open the Logitech camera configuration software for enabling custom options like facial tracking. With a capture card, it might open the options to configure the input resolution and FPS.
+Configure Crossbar (Button) |  Opens the device's Crossbar Configuration, if available. Consult your device's manual for more information.
+Resolution/FPS Type |  Most of the time this can be left on Device Default. If you are having issues with your device showing up, change it to custom and the following options become available to set manually | 
+Resolution |  This sets the base resolution for the video device. Make sure it's a mode that your device supports!
+FPS |  Sets the FPS of the device.
+Video Format |  If your device supports multiple video output formats (Such as MJPEG or XRGB), you can select the preferred format here.
+YUV Color Space |  Sets the color space the device will output in.
+YUV Color range |  Sets the color range the device will output in.
+Buffering |  This has three different modes, Enable, Disable, and Auto-Detect. Enable will turn buffering on, which can help if you are getting stuttering during playback. Setting to Disable will turn buffering off, which can help if you are experiencing a delay on the device. Auto-Detect is recommended, as it will attempt to ask the device which method is preferred.
+Flip Vertically (Checkbox) |  Flips the video image vertically. Some devices will (rarely) send the video input upside down.
+Audio Output Mode |  You can set to Capture Only (meaning you will not hear, without Audio Monitoring), or Output desktop audio (DirectSound/WaveOut). Enabling desktop output will send the device's audio out through your system default device.
+Use custom audio device (Checkbox) |  When enabled, the Audio Device selection becomes available, and allows you to use a separate audio device that will be linked to your video device. This can be useful if you want to use an external microphone on a webcam, for instance, and want to tie the audio directly to the Source itself.
 
 ##  Window Capture
 Window Capture allows you to capture a specific window and its contents. The advantages to using this source over Display Capture is that only the selected window will be shown, even if there are other windows in front of it (WIN7 NOTE: Having Aero disabled can interfere with this functionality.).
