@@ -11,8 +11,6 @@ Open Broadcaster Software (OBS) เป็น software สำหรับกา�
 
 ### ทำไมเลือกใช้ OBS
 
-![Why OBS](./OBS-Training-slides/Slide3.PNG)
-
 - OBS เป็น Free software สามารถดาวน์โหลดมาใช้ได้ฟรี ไม่ต้องเสียค่าใช้จ่าย
 - OBS รองรับระบบปฏิบัติการที่หลากหลาย ทำงานได้ทั้งบน Linux, Mac, และ Windows
 - OBS ไม่มีค่าใช้จ่ายผูกพัน รวมถึง plugin  ต่างๆ ด้วย
@@ -49,7 +47,23 @@ Open Broadcaster Software (OBS) เป็น software สำหรับกา�
 
 ### Source สำหรับ OBS 
 
-![OBS sources](./OBS-Training-slides/Slide9.PNG)
+- Audio Input Capture
+- Audio Output Capture
+- Blackmagic Device
+- BrowserSource
+- Color Source
+- Display Capture
+- Game Capture
+- Image
+- Image Slide Show
+- Intel® RealSense™ 3D Camera GreenScreen
+- Media Source
+- Scene
+- Text (GDI+)
+- VLC Video Source
+- Video Capture Device
+- Window Capture
+- Deprecated Sources
 
 ดูรายละเอียดเพิ่มเติมได้ที่ [แหล่งอินพุตสำหรับประกอบฉาก](./OBS-Source.md)
 
