@@ -102,121 +102,156 @@ Game Capture เป็นวิธีที่มีประสิทธิภ�
 
  
  <li>Capture foreground window with hotkey
-
-ตัวเลือกนี้  The final option, capture foreground window with hotkey, lets you set a specific key to tell the Game Capture source which game you want to show up. This is very useful if you change games often during a stream, and you don't want to have to go back into the Game Capture properties every time to select your new game. The hotkey can be set under Settings -> Hotkeys once the Game Capture source is added to your scene.
  
+ตัวเลือกสุดท้ายจับหน้าต่างพื้นหน้าด้วยปุ่มลัด ช่วยให้สามารถตั้งค่าคีย์ลัดขึ้นมาใช้ เพื่อเลือกอินพุตของของ Game Capture ที่จะให้แสดงในฉาก
+ มีประโยชน์ในกรณีที่ต้องการเปลี่ยนเกมบ่อยครั้งในระหว่างการสตรีมและไม่ต้องการกลับไปเลือกตัวเลือกในการจับภาพเกมทุกครั้งเพื่อเลือกเกมใหม
+ ปุ่มลัดสามารถตั้งค่าได้ที่ Settings -> Hotkeys หลังจากที่ได้เพิ่มแหล่งจับภาพจากเกมถูกเพิ่มเข้าไปในฉากแล้ว 
 
-There are several other options, and we'll give a short description of them. In general, the default options are sufficient for most applications and you should not change them unless you know why you need to, and understand what they mean. As always, if you have any questions, please stop by the forums or chat.
+นอกจากนี้ยังมีตัวเลือกอื่นๆ อีก ซึ่งโดยทั่วไปจะใช้ตามที่โปรแกรมกำหนดมาให้ ยกเว้นว่าจะกำหนดอะไรที่พิเศษจริงๆ 
 
 รายการ | รายละเอียด
 --|--
-Multi-adapter Compatibility | Used for systems that have multiple GPUs (such as a laptop). It changes the capture method from shared texture capture to memory capture. Memory capture is far less efficient than shared texture capture, and this option should only be enabled if you have no other options.
-Force Scaling | Allows you to force a scale on the capture source.
-Limit capture framerate | Limits the Game Capture source from capturing at a frame rate higher than OBS it set to use.
-Capture Cursor | As implied, this will either show or hide the mouse cursor in your game. Does not apply to mouse cursors rendered in the game itself, those will always be captured.
-Use anti-cheat compatibility hook | Capture third-party overlays (such as steam): If your game has an overlay that doesn't conflict with Game Capture, this will allow Game Capture to capture it as well.
+Multi-adapter Compatibility | ใช้สำหรับระบบที่มี GPU หลายตัว (เช่นแล็ปท็อป) <br> ตัวเลือกนี้จะเปลี่ยนวิธีการจับภาพจากการจับภาพพื้นผิวที่ใช้ร่วมกันเป็นการจับภาพหน่วยความจำ การจับหน่วยความจำมีประสิทธิภาพน้อยกว่าการจับภาพแบบ shared texture   capture เป็นการจับภาพแบบ memory capture <br> Memory capture จะมีประสิทธิภาพด้อยกว่า shared texture capture และควรเลือกใช้ตัวเลือกนี้เฉพาะกรณีที่ไม่มีทางเลือกจริง
+Force Scaling | อนุญาตให้กำหนดสเกลบนแหล่งจับภาพด้วยตนเอง
+Limit capture framerate | จำกัดอัตราเฟรมของ Game Capture source ไม่ให้สูงเกินที่ OBS กำหนด
+Capture Cursor | แสดงหรือซ่อนเคอร์เซอร์ของเมาส์ในเกม (หท่ยถึง cursor ของวินโดวส์ ที่ปรากฏอยู่บนหน้าจอเกมส์ ไม่รวมถึง mouse cursors ที่แสดงในเกมส์ ซึ่งจะถูกแสดงเสมอ) 
+Use anti-cheat compatibility hook  |  ช่วยป้องกันไม่ให้เกมส์มองว่า OBS เป็น cheat  (cheat : ซอฟต์แวร์ที่ติดตั้งเพื่อโกงในการเล่นเกมส์ เช่น เพิ่มเงินหรือเวลาอย่างไม่จำกัด  )
+Capture third-party overlays (such as steam)| ถ้าเกมส์ที่จับภาพ ไม่มี  overlay ที่ขัดแย้งกับความสามารถของ Game Capture ก็จะถูกจับภาพมาใส่ในฉากได้
+
 
 ##  Image
-This source allows you to various image types to your scene. Most image formats are supported. Alpha channel support is also available where applicable.
 
-The only options in Image Source are the path to the image, and unload image when not showing. This checkbox will unload the image from memory while it is not active, which can be useful if you have a large amount of images and few system resources available.
 
-Image Source supports the following image formats: .bmp, .tga, .png, .jpeg, .jpg, and .gif.
+Image Source ช่วยให้สามารถใส่ภาพประเภทต่างๆ ให้กับฉากที่ต้องการ  
+รองรับรูปแบบภาพส่วนใหญ่ การสนับสนุนแชนเนลอัลฟ่าก็มีให้ใช้ตามความเหมาะสม  
+ตัวเลือกมีแค่ 2 ตัวคือ 
+1. เส้นทางไปยังรูปภาพ
+2. ยกเลิกการโหลดรูปภาพเมื่อฉากไม่ถูกแสดง 
+
+ช่องทำเครื่องหมายนี้จะยกเลิกการโหลดภาพจากหน่วยความจำในขณะที่ไม่ได้ใช้งาน ซึ่งจะมีประโยชน์ในกรณีที่มีภาพจำนวนมากและมีข้อจำกัดด้านทรัพยากรของระบบ เช่นหน่วยความจำหรือความเร็วซีพียู
+
+![image-source-input](./images/image-source-input.PNG)
+
+
+รูปแบบภาพที่รองรับของ Image Source คือ  .bmp, .tga, .png, .jpeg, .jpg และ. gif
 
 
 ##  Image Slide Show
-The Image Slide Show Source allows you to add multiple images that will rotate through as a slide show. To use this source, click the + sign to add either individual files or directories to be loaded. Once you have all the images you want, you can configure how you want them to display.
+
+อินพุตแบบ Image Slide Show ช่วยให้สามารถเพิ่มรูปภาพหลาย ๆ รูปแบบที่จะเลื่อนโดยอัตโนมัติ วิธีการเพิ่มคือให้คลิกเครื่องหมาย + เพื่อเพิ่มไฟล์หรือไดเรกทอรีที่จะโหลด
+เมื่อเพิ่มภาพทั้งหมดที่ต้องการเข้าไปแล้ว ก็สามารถกำหนดรูปแบบที่จะแสดงได้
+
+
+
 
 รายการ | รายละเอียด
 --|--
-Transition | This drop down box allows you to select the animation type that will play during a transition between files. The default is a simple fade, but it can be changed to a cut, slide, or swipe
-Time Between Slides (milliseconds) | As the name implies, the time each image will be displayed before initiating a transition to the next.
-Transition Speed (milliseconds) | This is how fast the transition animation will take to go from starting to completely changed to the next image.
-NOTE: This value does not increase the time between slides. For example, if you have the Time Between Slides set to 10000ms, and the Transition Speed set to 2000ms, the transition will BEGIN at 8000ms from the end of the last transition, with the next slide being fully visible at 10000ms. If this value is HIGHER than the Time Between Slides, it will automatically reduce the time to match. It also cannot be lower than 50ms.
-Randomize Playback (checkbox) | This option will let you choose if you want to randomize the images being played. If this is enabled, the next image will be randomized at each transition. If disabled, they will be shown in the order of the file list.
-Image Slide Show Source supports the following image formats | .bmp, .tga, .png, .jpeg, .jpg, and .gif.
+Transition | เป็น drop down box ที่สามารถเลือก effect ที่เกิดขึ้นขณะเปลี่ยนภาพ โดย effect ที่มีให้ใช้ประกอบด้วย fade (จาง) cut (ตัดภาพ), slide (เลื่อน), หรือ  swipe (กวาด)
+Time Between Slides (milliseconds) | กำหนดเวลาที่จะเสองแต่ละภาพ (รวมทั้งเวลาของ effect ในการเปลี่ยนภาพจนครบอย่างสมบูรณ์)
+Transition Speed (milliseconds) | เป็นเวลาของ effect ที่เกิดขึ้นขณะเปลี่ยนจากภาพหนึ่งไปอีกภาพหนึ่ง<br> ค่านี้จะไม่ทำให้เวลาในการแสดงภาพเพิ่มขึ้น เช่น ถ้าตั้งเวลาของแต่ละภาพไว้ที่ 10000 มิลลิวินาที และตั้งเวลา transition ไว้ที่ 2000 มิลลิวินาที การเปลี่ยนภาพก็จะเริ่มต้นที่ 8000 มิลลิวินาที <br> ถ้าเวลานี้มากกว่าเวลาในการเปลี่ยน slide ก็จะถูกลดลงให้มีค่าที่เหมาะสม อย่างไรก็ตาม เวลานี้ต้องไม่สั้นกว่า 50 มิลลิวินาที
+Randomize Playback (checkbox) | เลือกว่าจะเล่นภาพแบบสุ่มหรือเล่นไปตามลำดับที่ได้เพิ่มไฟล์เอาไว้ตั้งแต่ต้น
+Image file type  | .bmp <br>.tga<br>.png<br>.jpeg<br>.jpg<br>.gif
+
 
 
 ##  Intel® RealSense™ 3D Camera GreenScreen
-This source type will allow you to use the digital green screen features of an Intel RealSense camera. RealSense cameras have a combination of a normal camera, infrared lasers, and an infrared camera to map the space in front of your PC and detect which parts of the video can be removed in a green screen effect. There is no configuration necessary for this source, simply add the source, pick your camera, and watch the magic!
+
+![Intel® RealSense™ 3D Camera GreenScreen](./images/d435-realsense-camera-16x9.png.rendition.intel.web.864.486.png)
+
+เป็นอินพุตซึ่งเชื่อมต่อกับ digital green screen ของ Intel RealSense camera. RealSense cameras เป็นการรวมกล้องธรรมดาเช้ากับ infrared lasers และ  infrared camera เพื่อสร้างภาพจำลองของสิ่งที่อยู่หน้าจอและส่วนของวิดีโอที่สามารถตัดออกการซ้อนภาพบน  green screen ในอินพุตชนิดนี้ไม่มีตัวเลือกให้เลือก การตั้งค่าต่างๆ ถูกกำหนดนอกโปรแกรม OBS
+
+[ดูเพิ่มเติมได้จากวิดีโอบน Youtube](https://www.youtube.com/watch?v=KMxXOcBsFZQ)
 
 
 ##  Media Source
-Media source is a great option to add all sorts of different media types to your stream. The currently supported file types are:
+
+Media source ใช้เพิ่ม media ชนิดต่างๆ เข้ามาใน OBS ดังรายละเอียดในตาราง 
+
+![media-source-input](./images/media-source-input.PNG)
+
+
 
 รายการ | รายละเอียด
 --|--
 Video | .mp4, .ts, .mov, .flv, .mkv, .avi, .gif, .webm
 Audio | .mp3, .aac, .ogg, .wav
-Simple click the Browse button to select your file, or uncheck the "Local file" box to allow a URL or other remote location to be added. For remote files, the URL/path goes in Input, and generally Input Format can be left blank.
 
-Once the file has been selected, there are only a few options that would need to be looked at.
+ตัวเลือก  "Local file" จะช่วยให้สามารถเลือกว่าจะใช้ media ในเครื่องหรือจาก URL ที่ต้องการ ถ้าเลือกจาก URL ก็อาจจะไม่ต้องระบุในช่อง Input Format 
+
+เมื่อเลือก media ที่ต้องการแล้ว เราก็สามารถกำหนดตัวเลือกได้ดังต่อไปนี้
+
 
 รายการ | รายละเอียด
 --|--
-Loop | Sets if the file will loop back to the beginning once playback has completed. Useful for .gifs
-Restart playback when source becomes active | This will allow you to set the file to restart once the source is active. Active means in the current visible scene
-Use hardware decoding when available | Fairly self explanatory!
-Hide source when playback ends | If enabled, the source will automatically hide itself when the file has completed playback. Useful for video files so they do not show the last frame indefinitely.
-Advanced | These options should only be access by users who understand what they are, and why they need them, so they will not be covered in this guide.
+Loop | ตั้งค่าการเล่นซ้ำของ media 
+Restart playback when source becomes active | กำหนดให้ media เล่นตั้งแต่เริ่มทุกครั้งที่เลือกฉาก 
+Use hardware decoding when available | ใช้การถอดรหัสด้วยฮาร์ดแวร์ถ้ามีให้ใช้ 
+Hide source when playback ends | ถ้าเลือกตัวเลือกนี้ สื่อที่ถูกเล่นจยจบจะถูกซ่อน <br> มีประโยชน์ตรงที่วิดีโอจะไม่ถูกเล่นแช่อยู่ที่เฟรมสุดท้ายหลังจากเล่นจบไปแล้ว
+Advanced | ใช้สำหรับ user ที่เชี่ยวชาญและอาจจะต่างกันไปในแต่ละ media รายละเอียดจะอยู่ในที่ที่เหมาะสม
 
 ##  Scene
-This Source is often overlooked, and while one of the simplest in function, it can allow for some of the most powerful functionality in OBS Studio. Since all Scenes are considered Sources, you can add an entire Scene as a Source anywhere you want.
+เป็นอินพุตที่ค่อยข้างมีประโยชน์มาก เนื่องจากแต่ละฉากมักจะมีอินพุตที่เหมาะสมประกอบอยู่ภายในแล้ว การใช้ Scene เป็นอินพุตจึงช่วยให้สามารถต่อยอดจากสิ่งที่ปรากฏในฉากเดิม และเพิ่มเติมเฉพาะอินพุตที่ต้องการเข้าไป 
 
-For example, this can allow you to create a static overlay that you want to use in every Scene, called Overlay. In several other scenes, let's say Main and Game, you can add the Overlay Scene. If any changes are necessary to any of the Sources in Overlay, you can just update them it will be updated everywhere else. This is just one of many examples on how this Source type can be used!
+หน้าจอของการเพิ่ม scence นี้จะมีแค่ตัวเลือกให้เลือกจาก scence ที่มีอยู่แล้วเท่านั้น
+
 
 
 ##  Text (GDI+)
-Text source can allow you to add simple text renders to your stream or recording layout. To get going, most of the default settings will be fine (except maybe the colors), and you can just type what you want your text to say in the field labeled "Text."
 
-If you want to load the text from a file, simple check the "Read from file" checkbox, and select the file that has the text you want to read in it. The file must be UTF-8 (most default text files will be), and the file will be reloaded on save. This means you can edit the file and it will automatically update.
+อินพุตแบบ Text ช่วยให้สามารถเพิ่มข้อความง่ายๆ เพื่อที่จะนำไป render ร่วมกับ media อื่นๆ ในฉาก  โดยทั่วไป ค่าตัวเลือกที่โปรแกรมกำหนดมาให้ก็น่าจะเพียวพอต่อการใช้งาน แต่ผู้ใช้ที่ต้องการปรับแต่รายละเอียดก็สามารถตั้งค่าได้โดยไม่ยาก
 
-Once the text is present, there are quite a few options for styling it. You can:
+![text-source-input](./images/text-source-input.PNG)
 
-Change the foreground color
-Change the background color
-Add a gradient
-Adjust the opacity (transparency/alpha)
-Set the horizontal and vertical align (relative to the red source bounding box)
-Add an outline (with options for size, color, and opacity)
-Use custom text extents for the size of the source, as well as if the text should wrap if the width is exceeded.
+
+นอกจากนี้ เรายังสามารถที่จะให้ OBS อ่านข้อความจากไฟล์บน Harddisk เพื่อการเปลี่ยนข้อความอัตโนมัติ โดยการคลิกเลือกที่ check box "Read from file"  
+โดยไฟล์ที่เก็บข้อความจะต้องเข้ารหัสเป็น UTF-8 (มิฉะนั้น ภาษาไทยอาจจะกลายเป็นภาษาต่างดาว) เมื่อใดที่เราเปลี่ยนข้อความในไฟล์และทำการบันทึก ข้อความบนจอภาพก็จะเปลี่ยนไปด้วยโดยอัตโนมัติ
+
+สิ่งที่เราสามารถทำได้กับข้อความ
+
+
+- เปลี่ยนสีพื้นหน้า
+- เปลี่ยนสีพื้นหลัง
+- เพิ่มการไล่ระดับสี
+- ปรับความทึบ (โปร่งใส / อัลฟ่า)
+- ตั้งค่าการจัดตำแหน่งแนวนอนและแนวตั้ง (สัมพันธ์กับกล่องขอบเขตสีแดงของแหล่งที่มา)
+- เพิ่มเค้าร่าง (พร้อมตัวเลือกสำหรับขนาดสีและความทึบ)
+- ใช้ขอบเขตข้อความที่กำหนดเองสำหรับขนาดของแหล่งข้อมูลเช่นเดียวกับถ้าข้อความควรตัดถ้าเกินความกว้าง
 
 ##  VLC Video Source
-Similar to Media Source, you can add video and other media files to this source to be played in your scenes. This source type will use the VLC libraries for extended media support over the built-in Media Source. It requires that VLC be installed on your system to show up as an available source in OBS. If you are using 64bit OBS, you must install 64bit VLC and if you are using 32bit OBS, you must install 32bit VLC.
 
-To add files, click the + sign to browse to your file, directory, or URL that you wish to add. If you add multiple, they will be played in the order they were added. If Loop playlist is checked, the playlist will start over once the end is reached.
+เช่นเดียวกับ Media Source เราสามารถเพิ่มวิดีโอและไฟล์สื่ออื่น ๆ 
+ลงใน VLC Video Source เพื่อเล่นในฉาก  
+อินพุตประเภทนี้จะใช้ไลบรารี VLC ซึ่งต้องติดตั้งเพิ่มเติม และลงให้ตรงเวอร์ชั่นด้วย
 
-The Visibility behavior drop down menu allows you to choose how visibility affects playback of the files. They should be self-explanatory.
-
+ 
+![VLC](./images/VLC-media-Player-logo.gif)
 
 ##  Video Capture Device
-The Video Capture Device Source allows you to add a variety of video devices, including but not limited to webcams and capture cards. On Windows, for a device to work with OBS the drivers needs to support DirectShow output. Since DirectShow is the standard output format for Windows, there's a good chance that this is what your device outputs. All major webcams and capture cards support DirectShow and will work with OBS.
 
-To add your device, simply add the Source, open the properties and select your device from the Device drop down list.
+อินพุตแบบอุปกรณ์จับภาพวิดีโอช่วยให้สามารถเพิ่มอุปกรณ์วิดีโอที่หลากหลาย เช่น เว็บแคม การ์ดจับภาพบน Windows รวมทั้งอุปกรณือื่นๆ 
+อุปกรณ์ที่ทำงานกับ OBS ไดร์เวอร์จำเป็นต้องรองรับ DirectShow output เนื่องจาก DirectShow เป็นรูปแบบเอาต์พุตมาตรฐานสำหรับ Windows 
+![VLC](./images/video-capture-device-source-input.PNG)
 
-You then have several options to configure it:
+เมื่อเพิ่มอินพุตชนิดนี้จะปรากฏตัวเลือกต่างๆ ให้เลือก
 
 รายการ | รายละเอียด
 --|--
-Deactivate/Active (Button) |  Clicking this will either turn your device off (when it reads Deactivate) or on (when it reads Activate).
-Configure Video (Button) |  This button will open any driver configuration utilities. For example, with a Logitech webcam it will open the Logitech camera configuration software for enabling custom options like facial tracking. With a capture card, it might open the options to configure the input resolution and FPS.
-Configure Crossbar (Button) |  Opens the device's Crossbar Configuration, if available. Consult your device's manual for more information.
-Resolution/FPS Type |  Most of the time this can be left on Device Default. If you are having issues with your device showing up, change it to custom and the following options become available to set manually | 
-Resolution |  This sets the base resolution for the video device. Make sure it's a mode that your device supports!
-FPS |  Sets the FPS of the device.
-Video Format |  If your device supports multiple video output formats (Such as MJPEG or XRGB), you can select the preferred format here.
-YUV Color Space |  Sets the color space the device will output in.
-YUV Color range |  Sets the color range the device will output in.
-Buffering |  This has three different modes, Enable, Disable, and Auto-Detect. Enable will turn buffering on, which can help if you are getting stuttering during playback. Setting to Disable will turn buffering off, which can help if you are experiencing a delay on the device. Auto-Detect is recommended, as it will attempt to ask the device which method is preferred.
-Flip Vertically (Checkbox) |  Flips the video image vertically. Some devices will (rarely) send the video input upside down.
-Audio Output Mode |  You can set to Capture Only (meaning you will not hear, without Audio Monitoring), or Output desktop audio (DirectSound/WaveOut). Enabling desktop output will send the device's audio out through your system default device.
-Use custom audio device (Checkbox) |  When enabled, the Audio Device selection becomes available, and allows you to use a separate audio device that will be linked to your video device. This can be useful if you want to use an external microphone on a webcam, for instance, and want to tie the audio directly to the Source itself.
+Deactivate/Active (Button) |  เป็นการเปิด/ปิดอุปกรณ์จับภาพวิดีโอ
+Configure Video (Button) |  เป็นการเปิดหน้าต่างควบคุมอุปกรณ์จับภาพตามที่ผู้ผลิตอุปกรณ์นั้นๆ ให้มา
+Configure Crossbar (Button) |  เปิดหน้าต่าง device's Crossbar Configuration (ถ้ามี) อ่านคู่มือของแต่ละอุปกรณ์.
+Resolution/FPS Type |  ปล่อยไว้ตามค่าพื้นฐานที่ OBS กำหนดให้  แต่ถ้ามีปัญหาจาการตั้งค่าพื้นฐาน ให้ลองกำหนดเอง
+Resolution |  กำหนด resolution ของอุปกรณ์จับภาพวิดีโอ (ในการใช้งาน ภาพที่ปรากฏบนฉากอาจมีการย่อขยาย แต่ resolution ที่กำหนดนี้จะถูกใช้)
+FPS |  ตั้งค่าอัตราเฟรมต่อวินาที (Frame Per Second) ของอุปกรณ์
+Video Format |  กำหนดรูปแบบวิดีโอ (เช่น MJPEG หรือ XRGB)
+Buffering |  กำหนดการทำ buffering ของวิดีโอ มีให้เลือก 3 โหมด คือ Enable, Disable,และ Auto-Detect <br> <li>Enable จะเปิดใช้ buffering ซึ่งจะช่วยลดอาการกระพริบขณะเล่นวิดีโอ (playback) <br> <li> Disable เป็นการปอดใช้งาน buffering จะช่วยแก้ปัญหาเรื่องการ delay ของสัญญาณภาพ <br> <li>Auto-Detect (เป็นตัวเลือกที่แนะนำให้ใช่้) ระบบจะหาวิธีที่ให้ผลดีที่สุด 
+Flip Vertically (Checkbox) |  พลิกวิดีโอในแนวตั้ง ซึ่งอาจจะพบได้ที่บางอุปกรณ์จะให้ภาพกลับหัว จนต้องใช้ตัวเลือกนี้เข้ามาแก้ไข
+Audio Output Mode |  สามารถเลือกที่จะสัญญาณเสียงวิ่งไปที่ระบบบันทึกเพียงอย่างเดียว ซึ่งจะไม่ได้ยินออกทางลำโพงขณะสร้างวิดีโอบน OBS
+Use custom audio device (Checkbox) |  ถ้าเลือก option นี้ จะสามารถเลือกอุปกรณ์เสียงที่จะเชื่อมเข้ากับวิดีโอได้ ซึ่งช่วยให้สามารถนพเสียงเข้าจากอุปกรณ์อื่นๆ เช่นไมโครโฟนภายนอกหรือกล้องเวบแคม
+
 
 ##  Window Capture
-Window Capture allows you to capture a specific window and its contents. The advantages to using this source over Display Capture is that only the selected window will be shown, even if there are other windows in front of it (WIN7 NOTE: Having Aero disabled can interfere with this functionality.).
 
 
-##  Deprecated Sources
-List of currently deprecated sources. Sources listed here should not be used unless aboslutely necessary, and are only left in for backwards compatibility reasons.
+Window Capture ช่วยให้สามารถจับภาพหน้าต่างและเนื้อหาของหน้าต่างนั้น ๆ ข้อดีของการใช้อินพุตนี้ผ่านตัวจับการแสดงผลคือจะมีเพียงหน้าต่างที่เลือกเท่านั้นที่จะปรากฏในฉากแม้ว่าจะมีหน้าต่างอื่นอยู่ด้านหน้า 
 
-Text (FreeType2)
+![window capture](./images/window-capture-source-input.PNG)
