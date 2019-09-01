@@ -1,3 +1,5 @@
 # OBS-Training
 ## หัวข้อ
-### [แหล่งอินพุตสำหรับประกอบฉาก](OBS-Source.md)
+
+### [OBS Training](OBS-Training.md)
+### [แหล่งอินพุตสำหรับประกอบ scene](OBS-Source.md)
