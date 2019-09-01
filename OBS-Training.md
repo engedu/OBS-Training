@@ -40,7 +40,7 @@ Open Broadcaster Software (OBS) เป็น software สำหรับกา�
 ![source/scene concept](./OBS-Training-slides/Slide7.PNG)
 
 
-### แนวคิดของ Scene และ Transition concept 
+### แนวคิดของ Scene และ Transition 
 
 ![Scene/Transition concept](./OBS-Training-slides/Slide8.PNG)
 
