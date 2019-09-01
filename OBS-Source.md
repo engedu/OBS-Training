@@ -1,4 +1,4 @@
-# OBS Sources
+# แหล่งอินพุตสำหรับประกอบฉาก 
 
 ## Audio Input/Output Capture
 
